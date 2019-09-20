@@ -20,11 +20,11 @@ public class User {
     @Column(name = "age")
     private int age;
 
-    @Column(name = "spending")
-    private double spending;
-
-    @Column(name = "saving")
-    private double saving;
+//    @Column(name = "spending")
+//    private double spending;
+//
+//    @Column(name = "saving")
+//    private double saving;
 
     public User(String username, String password) {
         this.username = username;
