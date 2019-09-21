@@ -43,6 +43,9 @@ public class User {
     @Column(name = "insurance")
     private boolean[] insurance;
 
+    public User() {
+    }
+
     public User(Long clusterID, String username, String password, Long bonds_value, Long stocks_value, Long savings_value, Long total_value, Long average_spendm, Long average_earnm, Long average_savingsm, boolean[] insurance) {
         this.clusterID = clusterID;
         this.username = username;
