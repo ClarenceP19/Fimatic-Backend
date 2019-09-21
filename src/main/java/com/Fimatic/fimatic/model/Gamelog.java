@@ -19,25 +19,28 @@ public class Gamelog extends DateAudit {
     @JoinColumn(name = "scenarioId", referencedColumnName = "id")
     private Scenario scenario;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "savingId", referencedColumnName = "id")
-    private Product saving;
+    @Column(name = "savings")
+    private Long savings;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "investmentId", referencedColumnName = "id")
-    private Product investment;
+    @Column(name = "stocks")
+    private Long stocks;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "insuranceId", referencedColumnName = "id")
-    private Product insurance;
+    @Column(name = "bonds")
+    private Long bonds;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bondId", referencedColumnName = "id")
-    private Product bond;
+    @Column(name = "insurances")
+    private Boolean[] insurance;
 
-//    @JoinColumn(name = "bondId", referencedColumnName = "id")
-//    private Product bond;
+    @Column(name = "networth")
+    private Long networth;
 
-
-
+    public Gamelog(User user, Scenario scenario, Long savings, Long stocks, Long bonds, Boolean[] insurance, Long networth) {
+        this.user = user;
+        this.scenario = scenario;
+        this.savings = savings;
+        this.stocks = stocks;
+        this.bonds = bonds;
+        this.insurance = insurance;
+        this.networth = networth;
+    }
 }

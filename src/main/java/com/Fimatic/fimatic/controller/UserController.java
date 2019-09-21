@@ -8,7 +8,6 @@ import com.Fimatic.fimatic.payload.RegisterRequest;
 import com.Fimatic.fimatic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,20 +38,21 @@ public class UserController {
     }
 
 
-    @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest registerRequest
-                                          ){
 
-        User user = new User(registerRequest.getUsername(),registerRequest.getPassword());
-        if(user != null){
-            userRepository.save(user);
-            return ResponseEntity.ok(user);
-        }else{
-            return ResponseEntity.ok(new ApiResponse(false,"Could not register "));
-        }
-
-        //cannot find user with username and password
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest registerRequest
+//                                          ){
+//
+//        User user = new User(registerRequest.getUsername(),registerRequest.getPassword());
+//        if(user != null){
+//            userRepository.save(user);
+//            return ResponseEntity.ok(user);
+//        }else{
+//            return ResponseEntity.ok(new ApiResponse(false,"Could not register "));
+//        }
+//
+//        //cannot find user with username and password
+//    }
 
     //register
 

@@ -27,9 +27,8 @@ public class Scenario {
     @Column(name = "objective")
     private String objective;
 
-    @ManyToOne
-    @JoinColumn(name="scenarioProduct",referencedColumnName = "id")
-    private Product scenarioProduct;
+    @Column(name="scenarioProduct")
+    private String scenarioProduct;
 
     @Column(name = "scenarioEffect")
     private double scenarioEffect;
@@ -67,16 +66,14 @@ public class Scenario {
     @Column(name="descriptionOne")
     private String descriptionOne;
 
-    @ManyToOne
-    @JoinColumn(name="outcomeProductOne",referencedColumnName = "id")
-    private Product outcomeProductOne;
+    @Column(name="outcomeProductOne")
+    private String outcomeProductOne;
 
     @Column(name = "outcomeEffectOne")
     private double outcomeEffectOne;
 
-    @ManyToOne
-    @JoinColumn(name="outcomeProductTwo",referencedColumnName = "id")
-    private Product outcomeProductTwo;
+    @Column(name="outcomeProductTwo")
+    private String outcomeProductTwo;
 
     @Column(name = "outcomeEffectTwo")
     private double outcomeEffectTwo;
@@ -87,13 +84,31 @@ public class Scenario {
     public Scenario() {
     }
 
-    public Scenario(String descriptionStart, String descriptionEnd, Product envProduct, double envEffect, int pivotNum, Product scenarioProduct, double scenarioEffect, int[] nextPivot, String headline) {
-        this.descriptionStart = descriptionStart;
-        this.descriptionEnd = descriptionEnd;
+    public Scenario(String episodeName, int pivotNum, String title, String headlineStart, String descriptionStart, String objective, String scenarioProduct, double scenarioEffect, int stagenum, int[] nextPivot, String descriptionEnd, String optionOne, String optionTwo, String optionThree, String optionFour, String optionFive, int outcomeProbability, String headlineOne, String descriptionOne, String outcomeProductOne, double outcomeEffectOne, String outcomeProductTwo, double outcomeEffectTwo, String productOffering) {
+        this.episodeName = episodeName;
         this.pivotNum = pivotNum;
+        this.title = title;
+        this.headlineStart = headlineStart;
+        this.descriptionStart = descriptionStart;
+        this.objective = objective;
         this.scenarioProduct = scenarioProduct;
         this.scenarioEffect = scenarioEffect;
+        this.stagenum = stagenum;
         this.nextPivot = nextPivot;
+        this.descriptionEnd = descriptionEnd;
+        this.optionOne = optionOne;
+        this.optionTwo = optionTwo;
+        this.optionThree = optionThree;
+        this.optionFour = optionFour;
+        this.optionFive = optionFive;
+        this.outcomeProbability = outcomeProbability;
+        this.headlineOne = headlineOne;
+        this.descriptionOne = descriptionOne;
+        this.outcomeProductOne = outcomeProductOne;
+        this.outcomeEffectOne = outcomeEffectOne;
+        this.outcomeProductTwo = outcomeProductTwo;
+        this.outcomeEffectTwo = outcomeEffectTwo;
+        this.productOffering = productOffering;
     }
 
     public String getDescriptionStart() {
@@ -120,13 +135,6 @@ public class Scenario {
         this.pivotNum = pivotNum;
     }
 
-    public Product getScenarioProduct() {
-        return scenarioProduct;
-    }
-
-    public void setScenarioProduct(Product scenarioProduct) {
-        this.scenarioProduct = scenarioProduct;
-    }
 
     public double getScenarioEffect() {
         return scenarioEffect;
