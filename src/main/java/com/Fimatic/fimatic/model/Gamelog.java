@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "gamelog")
-public class Gamelog extends DateAudit {
+public class Gamelog  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,6 +34,9 @@ public class Gamelog extends DateAudit {
     @Column(name = "networth")
     private Long networth;
 
+    @Column(name="points")
+    private Long points;
+
     public Gamelog(User user, Scenario scenario, Long savings, Long stocks, Long bonds, Boolean[] insurance, Long networth) {
         this.user = user;
         this.scenario = scenario;
@@ -42,5 +45,16 @@ public class Gamelog extends DateAudit {
         this.bonds = bonds;
         this.insurance = insurance;
         this.networth = networth;
+    }
+
+    public Gamelog(User user, Scenario scenario, Long savings, Long stocks, Long bonds, Boolean[] insurance, Long networth, Long points) {
+        this.user = user;
+        this.scenario = scenario;
+        this.savings = savings;
+        this.stocks = stocks;
+        this.bonds = bonds;
+        this.insurance = insurance;
+        this.networth = networth;
+        this.points = points;
     }
 }
