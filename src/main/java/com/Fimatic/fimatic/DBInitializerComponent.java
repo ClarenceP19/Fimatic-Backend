@@ -37,7 +37,7 @@ public class DBInitializerComponent implements CommandLineRunner {
     @Override
     public void run(String... strings) {
         // add stuff to initialise
-//        initialisePersonas();
+        initialisePersonas();
         initialiseScenarios();
     }
 
