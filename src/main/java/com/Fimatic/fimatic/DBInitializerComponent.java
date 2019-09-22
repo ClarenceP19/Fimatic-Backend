@@ -63,34 +63,6 @@ public class DBInitializerComponent implements CommandLineRunner {
             System.out.println(line);
             while (line != null) {
                 String[] columns = line.split(",(?=([^\"]|\"[^\"]*\")*$)");
-                System.out.println("+=====================+");
-                System.out.println(Integer.parseInt(columns[0]));
-                System.out.println(columns[1]);
-                System.out.println(Integer.parseInt(columns[2]));
-                System.out.println(columns[3]);
-                System.out.println(columns[4]);
-                System.out.println(columns[5]);
-                System.out.println(columns[6]);
-                System.out.println(Double.parseDouble(columns[7]));
-                System.out.println(Integer.parseInt(columns[8]));
-                System.out.println(parseData.parseProducts(columns[9]).toString());
-                System.out.println(parseData.parseEffects(columns[10]).toString());
-                System.out.println(columns[11]);
-                System.out.println(columns[12]);
-                System.out.println(columns[13]);
-                System.out.println(columns[14]);
-                System.out.println(columns[15]);
-//                System.out.println(columns[16]);
-                System.out.println(Integer.parseInt(columns[16]));
-                System.out.println(Double.parseDouble(columns[17]));
-                System.out.println(columns[18]);
-                System.out.println(columns[19]);
-                System.out.println(columns[20]);
-                System.out.println(Double.parseDouble(columns[21]));
-                System.out.println(columns[22]);
-                System.out.println(columns[23]);
-                System.out.println(columns[24]);
-                System.out.println(Double.parseDouble(columns[25]));
 //
 //                System.out.println("-=====================-");
 //                    Scenario scenario = new Scenario(Integer.parseInt(columns[0]),columns[1],Integer.parseInt(columns[2]),columns[3], columns[4],
