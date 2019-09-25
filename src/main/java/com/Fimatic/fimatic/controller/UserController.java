@@ -18,7 +18,7 @@ public class UserController {
 
     @Autowired
     UserRepository userRepository;
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest
     ){
